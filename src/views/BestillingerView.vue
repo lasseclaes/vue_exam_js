@@ -2,26 +2,29 @@
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import { ref, onMounted } from 'vue'
-import { ProductService } from '@/testservice/ProductService'
+// import { ProductService } from '@/testservice/ProductService'
 import { columns } from '@/data/examorderscolumns.js'
 
-onMounted(() => {
+/* onMounted(() => {
   ProductService.getProductsMini().then((data) => (products.value = data))
 })
 
-const products = ref()
+const products = ref() */
+import { useExamOrdersStore } from '@/stores/examorders'
+const examOrdersLoc = useExamOrdersStore()
 
-/* const columns = [
-  { field: 'code', header: 'Code' },
-  { field: 'name', header: 'Name' },
-  { field: 'category', header: 'Category' },
-  { field: 'quantity', header: 'Quantity' }
-] */
+console.log(examOrdersLoc.examOrders)
 </script>
+
 <template>
   <div class="card bestillinger">
-    <DataTable :value="products" tableStyle="min-width: 50rem">
-      <Column v-for="col in columns" :key="col" :field="col" :header="col"></Column>
+    <DataTable :value="examOrdersLoc.examOrders" tableStyle="min-width: 50rem">
+      <Column
+        v-for="col in columns"
+        :key="col.field"
+        :field="col.field"
+        :header="col.header"
+      ></Column>
     </DataTable>
   </div>
 </template>
