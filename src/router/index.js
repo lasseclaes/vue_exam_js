@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/bestillinger',
       name: 'bestillinger',
       component: BestillingerView
+    },
+    {
+      path: '/testingcounterstore',
+      name: 'testingcounterstore',
+      component: () => import('../views/TestingCounterStoreView.vue')
     }
   ]
 })

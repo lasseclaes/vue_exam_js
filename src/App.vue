@@ -15,6 +15,7 @@ import './assets/ljncustom.css'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/bestillinger">Bestillinger</RouterLink>
+        <RouterLink to="/testingcounterstore">Test Counter Store</RouterLink>
       </nav>
     </div>
   </header>

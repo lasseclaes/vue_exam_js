@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useExamOrdersStore = defineStore('examOrdersStore', () => {
-  const examOrders = [
+  const examOrders = ref([
     {
       id: 11175,
       examcode: 'Q_EXAM_2365',
@@ -443,8 +443,8 @@ export const useExamOrdersStore = defineStore('examOrdersStore', () => {
       special_production: false,
       att: 'noah'
     }
-  ]
+  ])
   return {
-    examOrders: ref(examOrders)
+    examOrders
   }
 })
