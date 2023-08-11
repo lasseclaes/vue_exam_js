@@ -1,26 +1,29 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import './assets/ljncustom.css'
+import LeftNav from './components/LeftNav.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/bestillinger">Bestillinger</RouterLink>
-        <RouterLink to="/testingcounterstore">Test Counter Store</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <LeftNav />
+  <!-- <header>
+    <div class="wrapper"></div>
+  </header> -->
 
   <RouterView />
+  <footer>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/bestillinger">Bestillinger</RouterLink>
+      <RouterLink to="/testingcounterstore">Test Counter Store</RouterLink>
+      <RouterLink to="/notes">Notes</RouterLink>
+    </nav>
+  </footer>
 </template>
 
 <style scoped>
+/*
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -29,11 +32,11 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-}
+} */
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 1rem;
   text-align: center;
   margin-top: 2rem;
 }
@@ -56,14 +59,18 @@ nav a:first-of-type {
   border: 0;
 }
 
+footer {
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 1024px) {
-  header {
+  /*   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
+  } */
 
-  .logo {
+  /*  .logo {
     margin: 0 2rem 0 0;
   }
 
@@ -71,15 +78,14 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
+  } */
 
-  nav {
+  /*  nav {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
-  }
+  } */
 }
 </style>

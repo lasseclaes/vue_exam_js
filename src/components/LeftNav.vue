@@ -5,18 +5,8 @@ import { PrimeIcons } from 'primevue/api'
 
 const items = ref([
   { label: 'Bestillinger', icon: PrimeIcons.INBOX, url: '/bestillinger' },
-  {
-    label: 'Arkiv',
-    icon: PrimeIcons.FOLDER,
-    url: '/bestillinger/arkiv',
-    class: 'sub-menu'
-  },
-  {
-    label: 'Slettede',
-    icon: PrimeIcons.TRASH,
-    url: '/bestillinger/slettede',
-    class: 'sub-menu'
-  },
+  { label: 'Arkiv', icon: PrimeIcons.FOLDER, url: '/bestillinger/arkiv', class: 'sub-menu' },
+  { label: 'Slettede', icon: PrimeIcons.TRASH, url: '/bestillinger/slettede', class: 'sub-menu' },
   { separator: true },
   { label: 'Eksamener', icon: PrimeIcons.PENCIL },
   { separator: true },
@@ -33,19 +23,24 @@ const items = ref([
 </script>
 
 <template>
-  <div class="card flex justify-content-center">
+  <div class="card">
+    <!-- flex justify-content-center-->
     <Menu :model="items" />
-    <RouterLink to="/notes">Notes</RouterLink>
   </div>
 </template>
 
 <style scoped>
+:deep(.p-menu) {
+  width: fit-content;
+  /* background-color: red; */
+}
 :deep(.p-menu .p-menuitem-separator) {
   margin: 0;
 }
 
 :deep(.p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link) {
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem 4rem 1.25rem 2rem;
+  /* background: red; */
 }
 </style>
 
