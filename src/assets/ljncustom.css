@@ -6,3 +6,10 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
 }
+
+.flex {
+  display: flex;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}

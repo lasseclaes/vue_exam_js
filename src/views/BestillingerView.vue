@@ -2,6 +2,7 @@
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import { ref, onMounted } from 'vue'
+import InputText from 'primevue/inputtext'
 // import { ProductService } from '@/testservice/ProductService'
 import { columns } from '@/data/examorderscolumns.js'
 
@@ -13,7 +14,17 @@ const products = ref() */
 import { useExamOrdersStore } from '@/stores/examorders'
 const examOrdersLoc = useExamOrdersStore()
 
-console.log(examOrdersLoc.examOrders)
+// console.log(examOrdersLoc.examOrders)
+
+//  filters
+import { FilterMatchMode, FilterOperator } from 'primevue/api'
+const loading = ref(false)
+
+const filters = ref()
+const initFilters = () => {
+  filters.value = { global: { value: null, matchMode: FilterMatchMode.CONTAINS } }
+}
+initFilters()
 </script>
 
 <template>
@@ -28,7 +39,21 @@ console.log(examOrdersLoc.examOrders)
       paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
       currentPageReportTemplate="{first} to {last} of {totalRecords}"
       removableSort
+      v-model:filters="filters"
+      dataKey="id"
+      :globalFilterFields="columns.map((column) => column.field)"
+      filterDisplay="row"
+      :loading="loading"
     >
+      <template #header>
+        <div class="flex justify-content-end">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search" />
+            <InputText v-model="filters['global'].value" placeholder="Søg i bestillinger" />
+          </span>
+        </div>
+      </template>
+
       <Column
         v-for="col in columns"
         :key="col.field"
