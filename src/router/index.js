@@ -12,6 +12,21 @@ const router = createRouter({
       redirect: '/bestillinger'
     },
     {
+      path: '/bestillinger',
+      name: 'bestillinger',
+      component: BestillingerView
+    },
+    {
+      path: '/bestillinger/arkiv',
+      name: 'arkiv',
+      component: () => import('../views/bestillinger/ArkivView.vue')
+    },
+    {
+      path: '/bestillinger/slettede',
+      name: 'slettede',
+      component: () => import('../views/bestillinger/SlettedeView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -20,14 +35,44 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/bestillinger',
-      name: 'bestillinger',
-      component: BestillingerView
-    },
-    {
       path: '/testingcounterstore',
       name: 'testingcounterstore',
       component: () => import('../views/TestingCounterStoreView.vue')
+    },
+    {
+      path: '/notes',
+      name: 'notes',
+      component: () => import('../views/NotesLjn.vue')
+    },
+    {
+      path: '/eksamener',
+      name: 'eksamener',
+      component: () => import('../views/NothingHereView.vue')
+    },
+    {
+      path: '/statistik',
+      name: 'statistik',
+      component: () => import('../views/NothingHereView.vue')
+    },
+    {
+      path: '/fakturering',
+      name: 'fakturering',
+      component: () => import('../views/NothingHereView.vue')
+    },
+    {
+      path: '/rushhour',
+      name: 'rushhour',
+      component: () => import('../views/NothingHereView.vue')
+    },
+    {
+      path: '/dubletter',
+      name: 'dubletter',
+      component: () => import('../views/NothingHereView.vue')
+    },
+    {
+      path: '/udtraek',
+      name: 'udtraek',
+      component: () => import('../views/NothingHereView.vue')
     }
   ]
 })

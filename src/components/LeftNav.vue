@@ -4,21 +4,21 @@ import { ref } from 'vue'
 import { PrimeIcons } from 'primevue/api'
 
 const items = ref([
-  { label: 'Bestillinger', icon: PrimeIcons.INBOX, url: '/bestillinger' },
-  { label: 'Arkiv', icon: PrimeIcons.FOLDER, url: '/bestillinger/arkiv', class: 'sub-menu' },
-  { label: 'Slettede', icon: PrimeIcons.TRASH, url: '/bestillinger/slettede', class: 'sub-menu' },
+  { label: 'Bestillinger', icon: PrimeIcons.INBOX, to: '/bestillinger' },
+  { label: 'Arkiv', icon: PrimeIcons.FOLDER, to: '/bestillinger/arkiv', class: 'sub-menu' },
+  { label: 'Slettede', icon: PrimeIcons.TRASH, to: '/bestillinger/slettede', class: 'sub-menu' },
   { separator: true },
-  { label: 'Eksamener', icon: PrimeIcons.PENCIL },
+  { label: 'Eksamener', icon: PrimeIcons.PENCIL, to: '/eksamener' },
   { separator: true },
-  { label: 'Statistik', icon: PrimeIcons.CHART_PIE },
+  { label: 'Statistik', icon: PrimeIcons.CHART_PIE, to: '/statistik' },
   { separator: true },
-  { label: 'Fakturering', icon: PrimeIcons.MONEY_BILL },
+  { label: 'Fakturering', icon: PrimeIcons.MONEY_BILL, to: '/fakturering' },
   { separator: true },
-  { label: 'Rush hour', icon: PrimeIcons.FLAG_FILL },
+  { label: 'Rush hour', icon: PrimeIcons.FLAG_FILL, to: '/rushhour' },
   { separator: true },
-  { label: 'Dubletter', icon: PrimeIcons.COPY },
+  { label: 'Dubletter', icon: PrimeIcons.COPY, to: '/dubletter' },
   { separator: true },
-  { label: 'Udtræk', icon: PrimeIcons.LIST }
+  { label: 'Udtræk', icon: PrimeIcons.LIST, to: '/udtraek' }
 ])
 </script>
 
@@ -30,6 +30,9 @@ const items = ref([
 </template>
 
 <style scoped>
+:deep(.router-link-active.router-link-active-exact) {
+  background-color: var(--blue-200);
+}
 :deep(.p-menu) {
   width: fit-content;
   /* background-color: red; */
