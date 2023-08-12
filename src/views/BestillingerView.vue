@@ -5,6 +5,7 @@ import { ref, onMounted } from 'vue'
 import InputText from 'primevue/inputtext'
 // import { ProductService } from '@/testservice/ProductService'
 import { columns } from '@/data/examorderscolumns.js'
+import CheckBoxLjn from '@/components/CheckBoxLjn.vue'
 
 /* onMounted(() => {
   ProductService.getProductsMini().then((data) => (products.value = data))
@@ -46,7 +47,8 @@ initFilters()
       :loading="loading"
     >
       <template #header>
-        <div class="flex justify-content-end">
+        <div class="flex justify-space-between">
+          <h1>Bestillinger</h1>
           <span class="p-input-icon-left">
             <i class="pi pi-search" />
             <InputText v-model="filters['global'].value" placeholder="Søg i bestillinger" />
@@ -62,6 +64,7 @@ initFilters()
         style="width: fit-content"
         sortable
       ></Column>
+      <CheckBoxLjn />
     </DataTable>
   </div>
 </template>
@@ -72,3 +75,5 @@ initFilters()
   font-weight: bold;
 }
 </style>
+
+<style></style>
