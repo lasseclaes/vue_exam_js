@@ -6,6 +6,7 @@ import InputText from 'primevue/inputtext'
 // import { ProductService } from '@/testservice/ProductService'
 import { columns } from '@/data/examorderscolumns.js'
 import CheckBoxLjn from '@/components/CheckBoxLjn.vue'
+import TabsLjn from '../components/TabsLjn.vue'
 
 /* onMounted(() => {
   ProductService.getProductsMini().then((data) => (products.value = data))
@@ -30,12 +31,13 @@ initFilters()
 
 <template>
   <div class="card bestillinger">
+    <TabsLjn />
     <DataTable
       :value="examOrdersLoc.examOrders"
       tableStyle="min-width: 50rem"
       showGridlines
       paginator
-      :rows="5"
+      :rows="50"
       :rowsPerPageOptions="[5, 10, 20, 50]"
       paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
       currentPageReportTemplate="{first} to {last} of {totalRecords}"
@@ -64,9 +66,9 @@ initFilters()
         style="width: fit-content"
         sortable
       ></Column>
-      <CheckBoxLjn />
     </DataTable>
   </div>
+  <CheckBoxLjn />
 </template>
 
 <style scoped>

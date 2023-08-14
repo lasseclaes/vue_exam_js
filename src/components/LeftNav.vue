@@ -41,6 +41,10 @@ const items = ref([
   margin: 0;
 }
 
+.card {
+  grid-column: 1 / 2;
+}
+
 :deep(.p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link) {
   padding: 1.25rem 4rem 1.25rem 2rem;
   /* background: red; */
